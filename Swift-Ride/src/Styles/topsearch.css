@@ -1,0 +1,143 @@
+.topsearch-container {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+   
+}
+
+.topsearch-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1f2937; 
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #dc2626;
+}
+
+.topsearch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.topsearch-card {
+    width: 90%;
+    background-color: #f3f4f6; /* Light Gray */
+    border: 2px solid #d1d5db;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.topsearch-card:hover {
+    background-color: #e5e7eb; /* Slightly darker gray */
+}
+
+/* Route Info */
+.route-info {
+    margin-bottom: 10px;
+}
+
+.route-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #6b7280; /* Gray */
+}
+
+.route-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    color: #374151; /* Dark Gray */
+}
+
+.route-duration {
+    padding: 5px 10px;
+    border: 1px dashed #9ca3af;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Facilities */
+.facilities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.facility {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.facility-icon {
+    width: 16px;
+    height: 16px;
+    color: #6b7280;
+}
+
+.facility-text {
+    font-size: 14px;
+    color: #4b5563;
+}
+
+/* Price & Reserve Button */
+.price-reserve {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.reserve-btn {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.reserve-btn:hover {
+    background-color: transparent;
+    color: #dc2626;
+    border: 2px solid #dc2626;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .topsearch-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .topsearch-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}

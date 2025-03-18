@@ -1,0 +1,82 @@
+/* home.css */
+.hello-container {
+    width: 100%;
+    height: 150vh; 
+    background: url("../assets/buses.png") no-repeat center bottom/contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -200px;
+}
+
+.hello-overlay {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Responsive padding */
+@media screen and (min-width: 640px) {
+    .hello-overlay {
+        padding: 0 28px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .hello-overlay {
+        padding: 0 64px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hello-overlay {
+        padding: 0 96px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .hello-overlay {
+        padding: 0 120px;
+    }
+}
+
+.hello-text {
+    font-size: 18px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.hello-heading {
+    font-size: 40px;
+    color: #1f2937;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 768px) {
+    .hello-heading {
+        font-size: 28px;
+    }
+
+    .hello-text {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hello-heading {
+        font-size: 24px;
+    }
+
+    .hello-text {
+        font-size: 14px;
+    }
+}

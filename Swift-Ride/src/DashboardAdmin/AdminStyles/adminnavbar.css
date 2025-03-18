@@ -1,0 +1,63 @@
+.admin-navbar {
+    width: calc(100% - 300px); /* Adjust based on sidebar width */
+    height: 60px;
+    margin-left: 40px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 2px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 250px; /* Sidebar width */
+    z-index: 1000;
+  }
+  
+  .admin-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .admin-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .notification {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .notification .icon {
+    font-size: 20px;
+    color: #555;
+  }
+  
+  .notification .badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
+  
+  .admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .admin-profile .icon {
+    font-size: 24px;
+    color: #333;
+  }
+  

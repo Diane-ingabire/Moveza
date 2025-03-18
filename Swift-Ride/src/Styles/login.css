@@ -1,0 +1,198 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background Styling */
+body {
+    background-image: url('./img/bc6b6fff-9a02-42b8-98d1-85a31699febd.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 20px;
+}
+
+/* Centering the Form */
+.virus-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Login/Register Box */
+.infection-box {
+    position: relative;
+    padding: 60px 20px 30px 20px;
+    width: 350px;
+    background-color: rgba(255, 220, 220, 0.406);
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+/* Form Containers */
+.symptoms-form, .diagnosis-form {
+    position: absolute;
+    width: 85%;
+    transition: 0.5s ease-in-out;
+}
+
+.symptoms-form {
+    left: 27px;
+}
+
+.diagnosis-form {
+    right: -350px;
+}
+
+/* Form Headings */
+.disease-header {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Input Fields */
+.symptom-group {
+    width: 100%;
+}
+
+.symptom-field {
+    margin: 12px 0;
+    position: relative;
+}
+
+.symptom-box {
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    color: #040404;
+    border: none;
+    border-radius: 10px;
+    padding: 7px 45px 0 20px;
+    background: rgba(224, 223, 223, 0.6);
+    backdrop-filter: blur(2px);
+    outline: none;
+}
+
+.symptom-label {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.symptom-box:focus ~ .symptom-label,
+.symptom-box:valid ~ .symptom-label {
+    top: 2px;
+    font-size: 10px;
+    color: #c12828;
+    font-weight: 500;
+}
+
+/* Password Visibility Toggle */
+.virus-icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+
+/* Remember Me */
+.immune-check {
+    display: flex;
+    font-size: 13px;
+    margin: 12px 0 30px 0;
+    color: #000;
+}
+
+.vaccine-checkbox {
+    margin-right: 8px;
+    width: 14px;
+}
+
+/* Submit Button */
+.vaccine-button {
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background: #8435d3;
+    color: #fff;
+    box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.144);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.vaccine-button:hover {
+    background: #65078b;
+    box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.32);
+}
+
+/* Forgot Password */
+.virus-recovery {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 40px;
+}
+
+.virus-recovery a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Login/Register Switch */
+.immunity-switch {
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    left: 25px;
+    width: 85%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.immunity-switch button {
+    flex: 1;
+    height: 50px;
+    border: none;
+    background: transparent;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.immunity-switch button:hover {
+    color: #c12828;
+}
+
+
+.infection-toggle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 50px;
+    background-color: #cccccd;
+    border-radius: 10px;
+    box-shadow: 2px 0
+}

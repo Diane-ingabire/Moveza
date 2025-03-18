@@ -1,0 +1,163 @@
+.navbar {
+    width: 100%;
+    height: 64px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 16px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.visible {
+    transform: translateY(0);
+}
+
+.hidden {
+    transform: translateY(-100%);
+}
+
+.scrolled {
+    background-color: #200b5a;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ef4444;
+    text-decoration: none;
+}
+
+.menuIcon {
+    display: flex;
+    cursor: pointer;
+    color: #374151;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.menu {
+    display: none;
+}
+
+.menuOpen {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+}
+
+.navItem {
+    text-decoration: none;
+    font-size: 16px;
+    color: #6b7280;
+    transition: color 0.3s ease-in-out;
+}
+
+.navItem:hover {
+    color: #ef4444;
+}
+
+.loginButton {
+    width: 100%;
+    padding: 8px 16px;
+    background-color: #ef4444;
+    color: #ffffff;
+    border: 1px solid #ef4444;
+    border-radius: 9999px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.loginButton:hover {
+    background-color: transparent;
+    color: #ef4444;
+}
+
+@media screen and (min-width: 480px) {
+    .menuOpen {
+        width: 80%;
+        left: 10%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        border: none;
+    }
+
+    .menuIcon {
+        display: none;
+    }
+
+    .navList {
+        flex-direction: row;
+    }
+
+    .loginButton {
+        width: auto;
+        padding: 8px 24px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar {
+        padding: 0 32px;
+    }
+
+    .menu {
+        gap: 32px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .navbar {
+        padding: 0 48px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .navbar {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+}
