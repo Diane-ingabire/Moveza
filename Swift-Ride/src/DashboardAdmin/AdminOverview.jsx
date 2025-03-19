@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../DashboardAdmin/AdminStyles/adminoverview.css";
+import "./AdminStyles/adminoverview.css";
 import { Link } from "react-router-dom";
 import { IoSearchCircleSharp } from "react-icons/io5";
 import { FaRegClipboard, FaBus, FaChartBar } from "react-icons/fa6";

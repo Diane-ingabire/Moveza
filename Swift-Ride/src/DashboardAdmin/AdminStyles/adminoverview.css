@@ -5,6 +5,11 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* margin-left: 10000px;
+    margin-top: -5000px;
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px; */
 }
 
 .admin-header {
