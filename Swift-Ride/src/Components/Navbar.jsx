@@ -15,7 +15,7 @@ const Navbar = () => {
     { label: "Services", link: "/services" },
     { label: "Tickets", link: "/tickets" },
     { label: "About", link: "/Seats" },
-    { label: "Login", link: "/LoginPage" }, 
+    
   ];
 
   const handleOpen = () => setOpen(!open);

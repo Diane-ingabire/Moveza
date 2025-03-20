@@ -8,10 +8,12 @@ import AdminLayout from "./DashboardAdmin/AdminLayout";
 import AdminOverview from "./DashboardAdmin/AdminOverview";
 import AdminTracking from "./DashboardAdmin/AdminTracking";
 import Seats from "./Components/Seats";
+import Invoice from './Components/Invoice'
 import LoginPage from "./Components/LoginPage";
 import DashboardOverview from "./Dashboard/DashboardOverview";
 import DashboardLayout from "./Dashboard/DashboardLayout";
 import { ProtectedRoute, AdminRoute, UserRoute } from "./Components/ProtectedRoutes";
+import CheckOut from "./Components/CheckOut";
 
 const App = () => {
   return (
@@ -22,7 +24,9 @@ const App = () => {
           <Route index element={<Home />} /> 
           <Route path="services" element={<Service />} /> 
           <Route path="Seats" element={<Seats />}/>
+          <Route path="Invoice" element={<Invoice />}/>
           <Route path="tickets" element={<Ticket />} />
+          <Route path="Checkout" element={<CheckOut />}/>
         </Route>
         
         {/* Public login page */}

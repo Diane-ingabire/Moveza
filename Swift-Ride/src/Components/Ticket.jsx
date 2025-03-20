@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Search from "./Search";
 import "../Styles/ticket.css";
+import { useNavigate } from "react-router-dom";
+
+
+
 
 const busData = [
   {
@@ -25,6 +29,12 @@ const busData = [
 ];
 
 const Ticket = () => {
+  const navigate = useNavigate();
+
+  const handleReserveSeat = () => {
+    navigate("/Seats");
+  };
+
   const [priceRange, setPriceRange] = useState([1382, 2676]);
   const [filters, setFilters] = useState({
     acDeluxe: false,
@@ -52,7 +62,7 @@ const Ticket = () => {
   return (
     <>
       <motion.div
-        className="ticket-container"
+        className="ticket-container-ticket"
         initial="hidden"
         animate="visible"
         exit="hidden"
@@ -164,7 +174,7 @@ const Ticket = () => {
                   <div className="seat-availability">
                     <span className="available-count">{bus.availableSeats}</span> seats available
                   </div>
-                  <button className="reserve-button">Reserve Seat</button>
+                  <button className="reserve-button"  onClick={handleReserveSeat}>Reserve Seat</button>
                 </div>
               </div>
             </div>
