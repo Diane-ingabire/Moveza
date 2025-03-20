@@ -1,0 +1,420 @@
+/* SwiftRide Tracking Page Styles */
+.tracking-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #f9fafb;
+    font-family: 'Inter', sans-serif;
+    margin-left: 300px;
+    width: 1000px;
+  }
+  
+  .tracking-header {
+    padding: 1rem 1.5rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .tracking-title h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .tracking-title p {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  .tracking-search {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .search-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input svg {
+    position: absolute;
+    left: 0.75rem;
+    color: #9ca3af;
+  }
+  
+  .search-input input {
+    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    width: 300px;
+    outline: none;
+  }
+  
+  .search-input input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+  
+  .filter-container {
+    position: relative;
+  }
+  
+  .filter-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .filter-button:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .filter-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    min-width: 160px;
+    overflow: hidden;
+  }
+  
+  .filter-dropdown button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 0.875rem;
+    cursor: pointer;
+    color: #374151;
+  }
+  
+  .filter-dropdown button:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .filter-dropdown button.active {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    font-weight: 500;
+  }
+  
+  .tracking-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .bus-list {
+    width: 360px;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    overflow-y: auto;
+  }
+  
+  .bus-list h2 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .bus-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .bus-card {
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .bus-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .bus-card.on-time {
+    border-left: 4px solid #10b981;
+  }
+  
+  .bus-card.delayed {
+    border-left: 4px solid #f59e0b;
+  }
+  
+  .bus-card.arrived {
+    border-left: 4px solid #6366f1;
+  }
+  
+  .bus-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bus-id {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .bus-status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .bus-status.on-time {
+    background-color: #d1fae5;
+    color: #047857;
+  }
+  
+  .bus-status.delayed {
+    background-color: #fef3c7;
+    color: #b45309;
+  }
+  
+  .bus-status.arrived {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+  }
+  
+  .bus-route {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+  }
+  
+  .bus-driver {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  .bus-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bus-speed, .bus-arrival {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+  }
+  
+  .map-container {
+    flex: 1;
+    position: relative;
+    height: 100%;
+  }
+  
+  .loading-state, .error-state, .no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: #6b7280;
+  }
+  
+  .error-state {
+    color: #ef4444;
+  }
+  
+  .bus-details-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background-color: #ffffff;
+    border-left: 1px solid #e5e7eb;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .bus-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .bus-details-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #6b7280;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    color: #111827;
+  }
+  
+  .bus-details-content {
+    padding: 1.5rem;
+  }
+  
+  .bus-details-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .bus-details-section h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .detail-label {
+    color: #6b7280;
+  }
+  
+  .detail-value {
+    font-weight: 500;
+    color: #111827;
+  }
+  
+  .detail-value.status {
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+  }
+  
+  .bus-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .action-button {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .action-button.contact {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+  }
+  
+  .action-button.contact:hover {
+    background-color: #dbeafe;
+  }
+  
+  .action-button.alert {
+    background-color: #fef2f2;
+    color: #dc2626;
+  }
+  
+  .action-button.alert:hover {
+    background-color: #fee2e2;
+  }
+  
+  /* Custom styles for Leaflet map */
+  .bus-icon {
+    border-radius: 50%;
+  }
+  
+  .bus-icon.on-time {
+    filter: hue-rotate(120deg);
+  }
+  
+  .bus-icon.delayed {
+    filter: hue-rotate(30deg);
+  }
+  
+  .bus-icon.arrived {
+    filter: hue-rotate(240deg);
+  }
+  
+  .bus-popup {
+    min-width: 200px;
+  }
+  
+  .bus-popup h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .bus-popup p {
+    margin: 0.25rem 0;
+
+  }

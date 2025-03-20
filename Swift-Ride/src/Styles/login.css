@@ -1,198 +1,228 @@
-/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+.containerlogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: fixed;
+  z-index: 1000;
 }
 
-/* Background Styling */
-body {
-    background-image: url('./img/bc6b6fff-9a02-42b8-98d1-85a31699febd.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding: 20px;
+.boxlogin {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 60px 20px 30px 20px;
+  height: 620px;
+  width: 350px;
+  background-color: rgba(255, 220, 220, 0.406);
+  border-radius: 30px;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Centering the Form */
-.virus-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+.box-login, .box-register {
+  position: absolute;
+  width: 85%;
+  transition: 0.5s ease-in-out;
 }
 
-/* Login/Register Box */
-.infection-box {
-    position: relative;
-    padding: 60px 20px 30px 20px;
-    width: 350px;
-    background-color: rgba(255, 220, 220, 0.406);
-    border-radius: 30px;
-    backdrop-filter: blur(15px);
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    overflow: hidden;
+.top-header, .top-header-login {
+  text-align: center;
+  margin: 30px 0;
 }
 
-/* Form Containers */
-.symptoms-form, .diagnosis-form {
-    position: absolute;
-    width: 85%;
-    transition: 0.5s ease-in-out;
+.top-header h3, .top-header-login h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
-.symptoms-form {
-    left: 27px;
+.input-group, .input-group-login {
+  width: 100%;
 }
 
-.diagnosis-form {
-    right: -350px;
+.input-field {
+  margin: 12px 0;
+  position: relative;
 }
 
-/* Form Headings */
-.disease-header {
-    text-align: center;
-    margin: 30px 0;
-    font-size: 22px;
-    font-weight: 600;
+.input-box {
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  color: #040404;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 45px 0 20px;
+  background: rgba(224, 223, 223, 0.6);
+  backdrop-filter: blur(2px);
+  outline: none;
 }
 
-/* Input Fields */
-.symptom-group {
-    width: 100%;
+.input-field label {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  font-size: 15px;
+  transition: 0.3s ease-in-out;
+  pointer-events: none;
 }
 
-.symptom-field {
-    margin: 12px 0;
-    position: relative;
+.input-box:focus ~ label,
+.input-box:not(:placeholder-shown) ~ label {
+  top: 2px;
+  font-size: 10px;
+  color: #ef4444;
+  font-weight: 500;
 }
 
-.symptom-box {
-    width: 100%;
-    height: 50px;
-    font-size: 15px;
-    color: #040404;
-    border: none;
-    border-radius: 10px;
-    padding: 7px 45px 0 20px;
-    background: rgba(224, 223, 223, 0.6);
-    backdrop-filter: blur(2px);
-    outline: none;
+.eye-box {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
 }
 
-.symptom-label {
-    position: absolute;
-    left: 20px;
-    top: 15px;
-    font-size: 15px;
-    transition: 0.3s ease-in-out;
+.eye-box svg {
+  color: #444444;
 }
 
-.symptom-box:focus ~ .symptom-label,
-.symptom-box:valid ~ .symptom-label {
-    top: 2px;
-    font-size: 10px;
-    color: #c12828;
-    font-weight: 500;
+.remember {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin: 12px 0 30px 0;
+  color: #000;
 }
 
-/* Password Visibility Toggle */
-.virus-icon {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    cursor: pointer;
+.check {
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
 }
 
-/* Remember Me */
-.immune-check {
-    display: flex;
-    font-size: 13px;
-    margin: 12px 0 30px 0;
-    color: #000;
+.input-submit {
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.144);
+  cursor: pointer;
+  transition: 0.4s;
+  margin-top: 20px;
 }
 
-.vaccine-checkbox {
-    margin-right: 8px;
-    width: 14px;
+.input-submit:hover {
+  background-color: transparent;
+  color: #ef4444;
+  border: 1px solid #ef4444;
 }
 
-/* Submit Button */
-.vaccine-button {
-    width: 100%;
-    height: 50px;
-    font-size: 15px;
-    font-weight: 500;
-    border: none;
-    border-radius: 10px;
-    background: #8435d3;
-    color: #fff;
-    box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.144);
-    cursor: pointer;
-    transition: 0.4s;
+.forgot {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 20px;
 }
 
-.vaccine-button:hover {
-    background: #65078b;
-    box-shadow: 0px 4px 20px rgba(62, 9, 9, 0.32);
+.forgot a {
+  text-decoration: none;
+  color: #000;
 }
 
-/* Forgot Password */
-.virus-recovery {
-    text-align: center;
-    font-size: 13px;
-    margin-top: 40px;
+.error {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
-.virus-recovery a {
-    text-decoration: none;
-    color: #000;
+/* Toggle switch styling */
+.toggle-container {
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  left: 25px;
+  width: 85%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-/* Login/Register Switch */
-.immunity-switch {
-    display: flex;
-    position: absolute;
-    bottom: 50px;
-    left: 25px;
-    width: 85%;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.16);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+.toggle-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  background: transparent;
 }
 
-.immunity-switch button {
-    flex: 1;
-    height: 50px;
-    border: none;
-    background: transparent;
-    color: black;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s;
+.toggle-btn.active {
+  color: #ef4444;
 }
 
-.immunity-switch button:hover {
-    color: #c12828;
+.toggle-slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50px;
+  background-color: #cccccd;
+  border-radius: 10px;
+  box-shadow: 2px 0px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.5s ease-in-out;
 }
 
+.toggle-slider.right {
+  left: 50%;
+}
 
-.infection-toggle {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-    height: 50px;
-    background-color: #cccccd;
-    border-radius: 10px;
-    box-shadow: 2px 0
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.terms-checkbox input {
+  margin-right: 8px;
+}
+
+.terms-checkbox label {
+  font-size: 12px;
+  position: static;
+}
+
+.input-box::placeholder {
+  opacity: 0;
+}
+
+@media only screen and (max-width: 576px) {
+  .boxlogin {
+    margin: 0 5px;
+    width: 320px;
+  }
 }

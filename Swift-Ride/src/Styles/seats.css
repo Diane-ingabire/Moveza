@@ -14,10 +14,12 @@
   }
   
   .header {
-    background-image: url('bus-background.jpg');
+    background-image: url('../assets/myconvection.jpg');
     background-size: cover;
     background-position: center;
-    height: 120px;
+    height: 200px;
+    margin-top: 70px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,0 +1,110 @@
+.dashboardnav {
+    height: 10%;
+    background-color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.left_dashboard_nav {
+    margin-left: 20px;
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.log_dash_nav {
+    color: #ef4444;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.right_dashboard_nav {
+    margin-left: 600px;
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.Find_my_bus, .Buy_Tickets {
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 15px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease-in-out;
+}
+
+.Find_my_bus:hover, .Buy_Tickets:hover {
+    background-color: #ef4444;
+    color: white;
+}
+
+.log_dash_nav p {
+    font-size: x-large;
+    color: #200b5a; 
+    margin-left: -50px; 
+}
+
+.log_dash_nav .loc-icon {
+    padding: 10px;
+    color: #ef4444; /* Red */
+}
+
+.change_mode {
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 10px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease-in-out;
+}
+
+.change_mode:hover {
+    background-color: #200b5a; /* Dark Purple */
+    color: white;
+}
+
+.profile_nav {
+    background-color: #ef4444; /* Red */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.myid {
+    background-color: #e5e7eb; /* Light Gray */
+    width: 80px;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.light .dashboard-navbar {
+    background-color: #ffffff;
+    color: black;
+}
+
+.dark .dashboard-navbar {
+    background-color: #333;
+    color: white;
+}
+
+.icon_dash_nav {
+    font-size: 20px;
+    color: #200b5a; /* Dark Purple */
+    margin-top: 10px;
+}

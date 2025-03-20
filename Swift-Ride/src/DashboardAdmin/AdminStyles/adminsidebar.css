@@ -10,6 +10,11 @@
     left: 0;
     top: 0;
   }
+  .logocard img{
+    width: 60px;
+    height:60px;
+    border-radius: 30px;
+  }
   
   .logo {
     font-size: 24px;
