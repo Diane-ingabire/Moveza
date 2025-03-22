@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FaBars,
   FaSearch,
@@ -85,8 +86,9 @@ const AdminNavbar = ({
           {notifications > 0 && <span className="badge-admin">{notifications}</span>}
         </button>
 
-        <button className="icon-btn-admin" title={t.messages}>
-          <FaEnvelope />
+        <button className="icon-btn-admin" title={t.messages}> 
+          <Link to ="Adminemail" >  <FaEnvelope /></Link>
+         
           {messages > 0 && <span className="badge-admin">{messages}</span>}
         </button>
 
