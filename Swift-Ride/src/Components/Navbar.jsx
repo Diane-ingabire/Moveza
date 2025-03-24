@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import { FaBars } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
 import "../Styles/navbar.css";
+import logoImg from "../assets/logo (2).png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -44,9 +45,10 @@ const Navbar = () => {
       }`}
     >
       <div className="container">
-        <Link to="/" className="logo">
-          SWIFT
-        </Link>
+      
+        <Link to="/" className="logonav"><span className="logoimg"><img src ={logoImg} /></span>
+         <h2>SWIFT RIDE</h2> 
+        </Link>  
         <div className="menuIcon" onClick={handleOpen}>
           {open ? <FaX className="icon" /> : <FaBars className="icon" />}
         </div>

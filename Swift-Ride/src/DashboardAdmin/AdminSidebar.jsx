@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaBus, FaUser, FaChartBar, FaTicketAlt, FaCog, FaSignOutAlt, FaHome } from "react-icons/fa";
 import "../DashboardAdmin/AdminStyles/adminsidebar.css"
 import { TbGpsFilled } from "react-icons/tb";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo (2).png"
 
 const AdminSidebar = () => {
   return (

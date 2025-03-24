@@ -47,7 +47,7 @@
 .exchange-button {
     width: 40px;
     height: 40px;
-    background: #dc2626;
+    background: #0b6fbb;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -64,7 +64,7 @@
 /* Search Button */
 .search-button {
     padding: 12px 20px;
-    background: #dc2626;
+    background: #0b6fbb;
     border: none;
     color: #fff;
     font-size: 16px;
@@ -77,8 +77,8 @@
 
 .search-button:hover {
     background: transparent;
-    color: #dc2626;
-    border: 1px solid #dc2626;
+    color: #0b6fbb;
+    border: 1px solid #0b6fbb;
 }
 
 /* Responsive Adjustments */

@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaYoutube, FaXTwitter } from "react-icons/fa6";
-import "../Styles/footer.css"; 
+import "../Styles/footer.css";
+import logoImg from "../assets/logo (2).png" 
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
         
         {/* Brand & Social Links */}
         <div className="footer-brand">
-          <h1 className="footer-logo">Bus</h1>
+          <h1 className="footer-logo"><span className="logoimg"><img src ={logoImg} /></span>Swift Ride</h1>
           <p className="footer-description">
             Bus is all about booking tickets through an online platform to make traveling comfortable for passengers. 
           </p>

@@ -94,7 +94,7 @@
   }
   
   .highlight {
-    color: #dc2626;
+    color: #0b6fbb;
   }
   
   .topsearch-grid {
@@ -188,7 +188,7 @@
   }
   
   .reserve-btn {
-    background-color: #dc2626;
+    background-color: #0b6fbb;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -201,8 +201,8 @@
   
   .reserve-btn:hover {
     background-color: transparent;
-    color: #dc2626;
-    border: 2px solid #dc2626;
+    color: #0b6fbb;
+    border: 2px solid #0b6fbb;
   }
   
   @media (max-width: 1024px) {
@@ -232,7 +232,7 @@
     position: absolute;
     width: 20px;
     height: 2px;
-    background-color: #dc2626;
+    background-color: #0b6fbb;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -274,7 +274,7 @@
 }
 
 .highlight {
-    color: #dc2626; /* Red */
+    color:#0b6fbb;
 }
 
 .services-grid {
