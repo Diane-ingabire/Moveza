@@ -17,7 +17,7 @@
 }
 
 .log_dash_nav {
-    color: #ef4444;
+    color: #0b6fbb;
     font-size: x-large;
     font-weight: bold;
 }
@@ -40,7 +40,7 @@
 }
 
 .Find_my_bus:hover, .Buy_Tickets:hover {
-    background-color: #ef4444;
+    background-color:#0b6fbb;
     color: white;
 }
 
@@ -52,7 +52,7 @@
 
 .log_dash_nav .loc-icon {
     padding: 10px;
-    color: #ef4444; /* Red */
+    color: #0b6fbb ;
 }
 
 .change_mode {
@@ -65,12 +65,12 @@
 }
 
 .change_mode:hover {
-    background-color: #200b5a; /* Dark Purple */
+    background-color: #200b5a; 
     color: white;
 }
 
 .profile_nav {
-    background-color: #ef4444; /* Red */
+    background-color: #0b6fbb;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -84,7 +84,7 @@
 }
 
 .myid {
-    background-color: #e5e7eb; /* Light Gray */
+    background-color: #e5e7eb; 
     width: 80px;
     padding: 10px;
     border-radius: 20px;
@@ -105,6 +105,6 @@
 
 .icon_dash_nav {
     font-size: 20px;
-    color: #200b5a; /* Dark Purple */
+    color: #200b5a;
     margin-top: 10px;
 }

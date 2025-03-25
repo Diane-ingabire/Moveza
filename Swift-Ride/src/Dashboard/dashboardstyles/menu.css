@@ -1,0 +1,96 @@
+.gerayo-menu {
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 1050px;  
+}
+  
+  .menu-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .user-icon {
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 12px;
+  }
+  
+  .user-email {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .menu-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-items li {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .menu-items li:last-child {
+    border-bottom: none;
+  }
+  
+  .menu-items a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .menu-items a:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .menu-items a i {
+    margin-right: 12px;
+    opacity: 0.6;
+  }
+  
+  .menu-footer {
+    padding: 16px;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .signout-link {
+    display: flex;
+    align-items: center;
+    color: #d9534f;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .signout-link i {
+    margin-right: 12px;
+    opacity: 0.6;
+  }
+  
+  /* Placeholder icons - you would replace these with actual icon styles or icon font */
+  .icon-profile::before { content: "👤"; }
+  .icon-bookings::before { content: "📅"; }
+  .icon-tickets::before { content: "🎫"; }
+  .icon-history::before { content: "📜"; }
+  .icon-settings::before { content: "⚙️"; }
+  .icon-premium::before { content: "👑"; }
+  .icon-about::before { content: "ℹ️"; }
+  .icon-support::before { content: "❓"; }
+  .icon-community::before { content: "👥"; }
+  .icon-signout::before { content: "🚪"; }

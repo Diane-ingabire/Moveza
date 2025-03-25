@@ -2,7 +2,14 @@ import React from "react";
 import "./dashboardstyles/DashboardNavbar.css"
 import { CiLocationOn } from "react-icons/ci";
 import { IoNotifications } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
+
 const DashboardNavbar =() =>{
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+     navigate('/Menu');  
+   };
     return(
         <nav >
         <div className="dashboardnav" >
@@ -23,7 +30,7 @@ const DashboardNavbar =() =>{
                     <span ></span>
                 </div>
                 <div className="icon_dash_nav"> <IoNotifications/></div>
-                <div className="profile_nav">G</div>
+                <div className="profile_nav" onClick={handleLogout}>G</div>
             </div>
         </div>
         </nav>

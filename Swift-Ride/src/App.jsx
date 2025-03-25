@@ -20,6 +20,8 @@ import AdminBooking from "./DashboardAdmin/AdminBooking";
 import Reports from "./DashboardAdmin/Reports";
 import AdminSettings from "./DashboardAdmin/AdminSettings";
 import AdminEmails from "./DashboardAdmin/Adminemails";
+import Aboutpage from "./Components/Aboutpage";
+import Menu from "./Dashboard/Menu";
 
 const App = () => {
   return (
@@ -30,6 +32,7 @@ const App = () => {
           <Route index element={<Home />} /> 
           <Route path="services" element={<Service />} /> 
           <Route path="Seats" element={<Seats />}/>
+          <Route path="about" element={<Aboutpage />}/>
           <Route path="Invoice" element={<Invoice />}/>
           <Route path="tickets" element={<Ticket />} />
           <Route path="Checkout" element={<CheckOut />}/>
@@ -61,6 +64,7 @@ const App = () => {
         <Route element={<UserRoute />}>
           <Route path="dashboard" element={<DashboardLayout />}>
             <Route index element={<DashboardOverview />} />
+            <Route path="Menu" element={<Menu/>}/>
             
             {/* Add more user routes as needed */}
           </Route>

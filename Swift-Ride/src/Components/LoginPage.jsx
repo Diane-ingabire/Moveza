@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Notify } from "notiflix";
+import mylogimg from "../assets/pixel1.jpg"
+import logo from "../assets/logo (2).png"
 
 const API_URL = 'http://localhost:3000';
 
@@ -17,6 +19,7 @@ function LoginPage() {
     handleSubmit: handleSubmitSignIn,
     formState: { errors: errorsSignIn },
   } = useForm();
+  
 
   const {
     register: registerSignUp,
@@ -131,7 +134,14 @@ function LoginPage() {
   
   return (
     <div className="containerlogin">
+      <div className='my_image'>
+        <h2>Swift Ride</h2>
+        <p>Smart Bus Booking Made Easy – Travel Smarter with SwiftRide!</p>
+        <img src= {mylogimg} />
+    
+      </div>
       <div className="boxlogin">
+        <h2 className="logo"><span className="logocardlogin"><img src={logo} alt="logo"/></span></h2>
         {/* Login Form */}
         <form 
           className="box-login" 

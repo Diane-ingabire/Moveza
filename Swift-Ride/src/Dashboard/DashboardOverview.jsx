@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./dashboardstyles/DashboardOverview.css";
+import "../Dashboard/dashboardstyles/DashboardOverview.css";
 import { Link } from "react-router-dom";
 import { IoSearchCircleSharp } from "react-icons/io5";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
@@ -82,16 +82,16 @@ const DashboardOverview = () => {
     }
 
     return (
-        <div className="overview_container">
-            <div className="dash_over_container">
-                <div className='upper'>
-                    <div className="upper_overview">
+        <div className="overview_container_usr">
+            <div className="dash_over_container_usr">
+                <div className='upper_usr'>
+                    <div className="upper_overview_usr">
                         <br /><br /><br />
                         <h2>Find Your Bus</h2>
                         <p>If you do not find the bus on the list, it is because we are still working on it</p>
                     </div>
-                    <div className="the_select_boxes">
-                        <div className='from_bx'>
+                    <div className="the_select_boxes_usr">
+                        <div className='from_bx_usr'>
                             <input
                                 type="text"
                                 value={fromInputValue}
@@ -108,10 +108,10 @@ const DashboardOverview = () => {
                                 </ul>
                             )}
                         </div>
-                        <div className='arrow_icon'>
+                        <div className='arrow_icon_usr'>
                         <FaArrowRightArrowLeft />
                         </div>
-                        <div className='To_bx'>
+                        <div className='To_bx_usr'>
                             <input
                                 type="text"
                                 value={toInputValue}
@@ -128,16 +128,16 @@ const DashboardOverview = () => {
                                 </ul>
                             )}
                         </div>
-                        <div className='search_icon'><IoSearchCircleSharp /></div>
+                        <div className='search_icon_usr'><IoSearchCircleSharp /></div>
                     </div>
-                    <div className='mylocation'>
-                        <div className='location_overview'>Location</div>
-                        <div className='Routes_overview'>Route ID</div>
+                    <div className='mylocation_usr'>
+                        <div className='location_overview_usr'>Location</div>
+                        <div className='Routes_overview_usr'>Route ID</div>
                     </div>
                 </div>
 
                 {/* Filter Options (All Buses, Pinned) */}
-                <div className='myoptions'>
+                <div className='myoptions_usr'>
                     <div
                         className={`allbuses ${selectedFilter === "all" ? "active" : ""}`}
                         onClick={() => setSelectedFilter("all")}
@@ -155,13 +155,13 @@ const DashboardOverview = () => {
                 </div>
 
                 {/* Most Popular Places */}
-                <div className="tags">
+                <div className="tags_usr">
                     <p>Most popular</p>
-                    <div className="most_popular">
+                    <div className="most_popular_usr">
                         {popular_places.map((place, index) => (
                             <div
                                 key={index}
-                                className="myplace"
+                                className="myplace_usr"
                                 onClick={() => setSelectedFilter(place)}
                                 style={{ cursor: "pointer", backgroundColor: selectedFilter === place ? "#ddd" : "#fff" }}
                             >
@@ -172,36 +172,36 @@ const DashboardOverview = () => {
                 </div>
 
                 {/* Bus Booking Cards */}
-                <div className="booking_cards">
+                <div className="booking_cards_usr">
                     {filteredBuses.length > 0 ? (
                         filteredBuses.map((bus, index) => (
-                            <div key={index} className="bus">
-                                <div className="left_card">
-                                    <div className="myid">{bus.id}</div>
-                                    <div className="mydirection">{bus.direction}</div>
-                                    <div className="mytype">{bus.type}</div>
+                            <div key={index} className="bus_usr">
+                                <div className="left_card_usr">
+                                    <div className="myid_usr">{bus.id}</div>
+                                    <div className="mydirection_usr">{bus.direction}</div>
+                                    <div className="mytype_usr">{bus.type}</div>
                                     <hr />
-                                    <div className="time">
-                                        <div className="departure">
-                                            <p className="title">{bus.title}</p>
+                                    <div className="time_usr">
+                                        <div className="departure_usr">
+                                            <p className="title_usr">{bus.title}</p>
                                             <p>{bus.time}</p>
                                         </div>
-                                        <div className="Arrival">
-                                            <p className="arrival">{bus.arrival}</p>
+                                        <div className="Arrival_usr">
+                                            <p className="arrival_usr">{bus.arrival}</p>
                                             <p>{bus.time2}</p>
                                         </div>
                                     </div>
-                                    <div className="pinme" onClick={() => togglePin(bus)} style={{ cursor: "pointer", color: pinnedBuses.includes(bus) ? "red" : "black" }}>
+                                    <div className="pinme_usr" onClick={() => togglePin(bus)} style={{ cursor: "pointer", color: pinnedBuses.includes(bus) ? "red" : "black" }}>
                                         {pinnedBuses.includes(bus) ? "Unpin" : "Pin"}
                                     </div>
                                 </div>
-                                <div className="Right_card">
-                                    <div className="price">
-                                        <p className="mycost">{bus.cost}</p>
-                                        <p className="mydescript">{bus.Description}</p>
-                                        <button className="btn1"><Link to="/BusTracker">Track Bus</Link></button><br />
-                                        <button className="btn2">More info</button>
-                                        <p className="report">Report a problem</p>
+                                <div className="Right_card_usr">
+                                    <div className="price_usr">
+                                        <p className="mycost_usr">{bus.cost}</p>
+                                        <p className="mydescript_usr">{bus.Description}</p>
+                                        <button className="btn1_usr"><Link to="/BusTracker" className="linkbtn_usr">Track Bus</Link></button><br />
+                                        <button className="btn2_usr">More info</button>
+                                        <p className="report_usr">Report a problem</p>
                                     </div>
                                 </div>
                             </div>

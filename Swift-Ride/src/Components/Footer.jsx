@@ -38,10 +38,10 @@ const Footer = () => {
         <div className="footer-section">
           <h2 className="footer-title">Top Reserved Routes</h2>
           <ul className="footer-list">
-            <li><Link to="/routes/kathmandu-pokhara" className="footer-link">Kathmandu - Pokhara</Link></li>
-            <li><Link to="/routes/pokhara-mustang" className="footer-link">Pokhara - Mustang</Link></li>
-            <li><Link to="/routes/kathmandu-chitwan" className="footer-link">Kathmandu - Chitwan</Link></li>
-            <li><Link to="/routes/kathmandu-lumbini" className="footer-link">Kathmandu - Lumbini</Link></li>
+            <li><Link to="/routes/kathmandu-pokhara" className="footer-link">Kimironko - Nyabugogo</Link></li>
+            <li><Link to="/routes/pokhara-mustang" className="footer-link">Nyabugogo - Musanze</Link></li>
+            <li><Link to="/routes/kathmandu-chitwan" className="footer-link">Nyabugogo - Huye</Link></li>
+            <li><Link to="/routes/kathmandu-lumbini" className="footer-link">Downtown - Nyabugogo</Link></li>
           </ul>
         </div>
 
