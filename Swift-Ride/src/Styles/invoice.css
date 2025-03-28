@@ -12,6 +12,7 @@
   
   /* Invoice Title */
   .invoice-title {
+    margin-top: 20px;
     font-size: 26px;
     font-weight: bold;
     color: #222;
@@ -40,7 +41,7 @@
   
   /* Red Section - Header */
   .ticket-header {
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+     background: linear-gradient(135deg, #007bff, gray);
     color: white;
     padding: 15px;
     text-align: center;
@@ -51,9 +52,10 @@
   }
   
   .bus-logo {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    margin-right: 50px;
+    border-radius: 50px;
   }
   
   .bus-name {
@@ -114,9 +116,10 @@
   }
   
   .download-btn {
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    background: #007bff;
     color: white;
     border: none;
+    margin-top: 20px;
     padding: 10px 15px;
     border-radius: 8px;
     font-size: 14px;
@@ -126,13 +129,13 @@
   }
   
   .download-btn:hover {
-    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    background: linear-gradient(135deg, #007bff, gray);
     transform: scale(1.05);
   }
   
   /* Bill Paid Notice */
   .bill-paid {
-    color: green;
+    color: gray;
     font-weight: bold;
   }
   
@@ -154,7 +157,7 @@
   }
   
   #bus-ticket {
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+   background: linear-gradient(135deg, #007bff, gray);;
     color: white;
     padding: 10px;
     border-radius: 8px;

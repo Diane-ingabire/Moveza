@@ -17,11 +17,11 @@ const AdminBooking = () => {
         // Simulate API call
         setTimeout(() => {
           const mockBookings = [
-            { id: 1, customerName: "John Doe", serviceType: "Haircut", date: "2025-03-25", time: "10:00 AM", status: "confirmed", phone: "123-456-7890", email: "john@example.com" },
-            { id: 2, customerName: "Jane Smith", serviceType: "Spa", date: "2025-03-26", time: "2:30 PM", status: "pending", phone: "234-567-8901", email: "jane@example.com" },
-            { id: 3, customerName: "Mike Johnson", serviceType: "Massage", date: "2025-03-27", time: "11:15 AM", status: "cancelled", phone: "345-678-9012", email: "mike@example.com" },
-            { id: 4, customerName: "Sarah Williams", serviceType: "Facial", date: "2025-03-28", time: "3:45 PM", status: "confirmed", phone: "456-789-0123", email: "sarah@example.com" },
-            { id: 5, customerName: "David Brown", serviceType: "Haircut", date: "2025-03-29", time: "9:30 AM", status: "pending", phone: "567-890-1234", email: "david@example.com" },
+            { id: 1, customerName: "Racheal MUTESI", serviceType: "Bus001", date: "2025-03-25", time: "10:00 AM", status: "confirmed", phone: "123-456-7890", email: "john@example.com" },
+            { id: 2, customerName: "Jane MUTONI", serviceType: "Bus002", date: "2025-03-26", time: "2:30 PM", status: "pending", phone: "234-567-8901", email: "jane@example.com" },
+            { id: 3, customerName: "Mike RUGIRA", serviceType: "Bus003", date: "2025-03-27", time: "11:15 AM", status: "cancelled", phone: "345-678-9012", email: "mike@example.com" },
+            { id: 4, customerName: "Bosco NSHUTI", serviceType: "Bus004", date: "2025-03-28", time: "3:45 PM", status: "confirmed", phone: "456-789-0123", email: "sarah@example.com" },
+            { id: 5, customerName: "David MUTABAZI", serviceType: "Bus005", date: "2025-03-29", time: "9:30 AM", status: "pending", phone: "567-890-1234", email: "david@example.com" },
           ];
           setBookings(mockBookings);
           setFilteredBookings(mockBookings);
@@ -134,7 +134,7 @@ const AdminBooking = () => {
               <tr>
                 <th>ID</th>
                 <th>Customer</th>
-                <th>Service</th>
+                <th>BusNumber</th>
                 <th>Date</th>
                 <th>Time</th>
                 <th>Status</th>

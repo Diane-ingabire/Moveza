@@ -8,30 +8,37 @@
   }
   
   .hero-section {
-    height: 100vh;
+    height: 50vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/three-buses-staying-parking-lot-front-view-buses-with-blue-sky-clouds_926058-6852.jpg');
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
     text-align: center;
-    /* background-color: rgba(0, 0, 0, 0.4);
-    background-blend-mode: darken; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 60px;
+    border-radius: 70px;
   }
   
   .hero-section h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
   }
   
   .hero-section p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     opacity: 0.9;
     max-width: 800px;
+    margin-top: 50px;
+    background-color: #ffffff;
+    color: #555;
+    padding: 20px;
+    border-radius: 50px;
+
   }
   
   .hero-section button {
@@ -51,7 +58,7 @@
   }
   
   .content-section {
-    padding: 100px 20px;
+    padding: 30px 20px;
     max-width: 1000px;
     margin: auto;
     text-align: center;

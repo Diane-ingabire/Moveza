@@ -4,7 +4,14 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-left: 1050px;  
+    margin-left: 1050px;
+    height: 800px;
+    z-index:1000;
+    padding: 20px;
+    margin-top: 60px;
+   
+ 
+ 
 }
   
   .menu-header {
@@ -13,11 +20,17 @@
     padding: 16px;
     border-bottom: 1px solid #f0f0f0;
   }
+  .close-button{
+    margin-top:-60px;
+    margin-right: -10px;
+    
+    
+  }
   
   .user-icon {
     width: 40px;
     height: 40px;
-    background-color: orange;
+    background-color: #0b6fbb;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -34,12 +47,19 @@
   
   .menu-items {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    padding: 20px;
+   
   }
   
   .menu-items li {
     border-bottom: 1px solid #f0f0f0;
+    padding: 5px 10px;
+  }
+   .menu-items li:hover {
+    background: #0b6fbb;
+    border-radius: 20px;
+    color: white;
+   
   }
   
   .menu-items li:last-child {
@@ -68,29 +88,16 @@
   .menu-footer {
     padding: 16px;
     border-top: 1px solid #f0f0f0;
+    text-align: center;
+   
+    background: #0b6fbb;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
   }
   
-  .signout-link {
-    display: flex;
-    align-items: center;
-    color: #d9534f;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .signout-link i {
-    margin-right: 12px;
-    opacity: 0.6;
-  }
-  
-  /* Placeholder icons - you would replace these with actual icon styles or icon font */
-  .icon-profile::before { content: "👤"; }
-  .icon-bookings::before { content: "📅"; }
-  .icon-tickets::before { content: "🎫"; }
-  .icon-history::before { content: "📜"; }
-  .icon-settings::before { content: "⚙️"; }
-  .icon-premium::before { content: "👑"; }
-  .icon-about::before { content: "ℹ️"; }
-  .icon-support::before { content: "❓"; }
-  .icon-community::before { content: "👥"; }
-  .icon-signout::before { content: "🚪"; }
+ 
+ 

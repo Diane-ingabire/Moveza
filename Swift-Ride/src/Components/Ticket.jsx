@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Search from "./Search";
 import "../Styles/ticket.css";
 import { useNavigate } from "react-router-dom";
+import { FaBusAlt } from "react-icons/fa";
 
 
 
@@ -148,7 +149,7 @@ const Ticket = () => {
             <div className="bus-card" key={index}>
               <div className="bus-info">
                 <div className="bus-name">
-                  <span className="bus-icon">🚍</span>
+                  <span className="bus-icon"><FaBusAlt /></span>
                   <span>{bus.name}</span>
                 </div>
                 
@@ -158,7 +159,7 @@ const Ticket = () => {
                     <p>{bus.departureLocation}</p>
                   </div>
                   <div className="bus-journey-icon">
-                    <span>🚌</span>
+                    <span><FaBusAlt /></span>
                   </div>
                   <div className="arrival">
                     <h3>{bus.arrivalTime}</h3>

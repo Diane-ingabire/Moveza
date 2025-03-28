@@ -1,118 +1,182 @@
-/* Navbar Container */
-.navbaradmin {
+.dashnavbar_admin {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
-  padding: 12px 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
+  padding: 0.5rem 1rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-left: 250px;
-  width: 85%;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
-/* Dark Mode */
-.navbaradmin.dark {
-  background-color: #1f2937;
-  color: white;
-}
-
-/* Left Section */
-.navbar-left-admin {
+.dashnavbar-left_admin, .dashnavbar-right {
   display: flex;
   align-items: center;
+  gap: 2px;
+ 
 }
 
-.menu-btn-admin {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  margin-right: 16px;
-}
-
-.search-container-admin {
+.search-container_admin {
   position: relative;
+  margin-left: 1rem;
 }
 
-.search-input-admin {
-  width: 200px;
-  padding: 8px 32px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+.search-input_admin {
+  padding: 0.5rem 3rem 0.5rem 2.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 250px;
 }
 
-.search-icon-admin {
+.search-icon_admin {
   position: absolute;
-  left: 10px;
+  left: 0.60rem;
   top: 50%;
   transform: translateY(-50%);
-  color: #888;
+  color: #666;
 }
-
-/* Right Section */
-.navbar-right-admin {
-  display: flex;
-  align-items: center;
+.dashnavbar-right{
+  margin-right: 300px;
 }
-
-.language-select-admin {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 16px;
-}
-
-.icon-btn-admin {
-  position: relative;
+.nav-button {
   background: none;
   border: none;
-  font-size: 20px;
+  padding: 1rem;
   cursor: pointer;
-  margin: 0 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+.nav-button img{
+  height: 30px;
+  width:30px;
+  border-radius: 50px;
 }
 
-.icon-btn-admin:hover {
-  color: #2563eb;
-}
-
-.badge-admin {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background: red;
-  color: white;
-  font-size: 12px;
+.nav-button:hover {
+  background: #f5f5f5;
   border-radius: 50%;
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  color: white;
+  font-size: 0.75rem;
   width: 18px;
   height: 18px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Theme Toggle */
-.theme-toggle-admin {
-  font-size: 20px;
-  margin-left: 8px;
+.dropdown-container {
+  position: relative;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .search-input-admin {
-    width: 150px;
-  }
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-width: 200px;
+  margin-top: 0.5rem;
+  z-index: 1000;
+}
 
-  .navbar-admin {
-    padding: 10px;
-  }
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: #333;
+  text-decoration: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
 
-  .navbar-right-admin {
-    gap: 5px;
-  }
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
 
-  .icon-btn-admin {
-    font-size: 18px;
-  }
+
+
+.country-flag {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0.5rem;
+}
+
+.menu-button:hover {
+  color: #333;
+}
+.table-container{
+  width: 80%;
+  height: 150%;
+}
+.table-container h2{
+  margin-top: 20px;
+}
+/* General styles for dark mode */
+.dark-mode {
+background-color: #121212;
+color: white;
+}
+
+/* Navbar styles */
+.dark-mode .dashnavbar {
+background-color: #222;
+color: white;
+}
+
+/* Sidebar styles */
+.dark-mode .sidebar {
+background-color: #222;
+color: white;
+}
+
+.dark-mode .sidebar a {
+color: white;
+}
+
+.dark-mode .sidebar a:hover {
+background-color: #333;
+}
+
+/* Search bar */
+.dark-mode .search-container input {
+background-color: #333;
+color: white;
+}
+
+/* Dropdown menus */
+.dark-mode .dropdown-menu {
+background-color: #333;
+color: white;
+}
+
+/* Main content area */
+.dark-mode .content {
+background-color: #1a1a1a;
+color: white;
 }

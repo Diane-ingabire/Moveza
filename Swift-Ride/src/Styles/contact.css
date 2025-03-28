@@ -1,0 +1,165 @@
+*{
+    margin:0px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+
+}
+.contact{
+     position:relative;
+     min-height: 100vh;
+     padding: 50px 100px ;
+     align-items: center;
+     flex-direction: column;
+     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../assets/mbbo-teaser-DTSA-value-added-services-01.jpg');
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+
+}
+.contact .content_contact{
+     max-width: 800px;
+     text-align:center;
+}
+.contact .content_contact h2{
+    font-size:36px;
+    font-weight:500;
+    color:white;
+    margin-top: 20px;
+}
+.contact .content_contact p{
+    
+    font-weight:300;
+    color:#fff;
+}
+.container_contact{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:30px;
+   
+
+}
+.container_contact .contactInfo{
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    
+
+}
+.container_contact .contactInfo .box_contact{
+     position: relative;
+     padding: 20px 0;
+     display:flex;
+     
+}
+.container_contact .contactInfo .box_contact .icon_contact{
+     min-width: 60px;
+     height: 60px;
+     background: #fff;
+     display:flex;
+     justify-content: center;
+     align-items:center;
+     border-radius: 50%;
+     font-size: 22%;
+
+}
+.container_contact .contactInfo .box_contact .icon_contact .icon{
+    font-size: 70px;   
+}
+
+.container_contact .contactInfo .box_contact .text_contact{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+
+}
+.container_contact .contactInfo .box_contact .text_contact h3{
+    font-weight: 500;
+    color:#0b6fbb;
+}
+.contactForm{
+    width:40%;
+    padding:40px;
+    background:radial-gradient(circle,gray , transparent),
+    linear-gradient(45deg, #0b6fbb, rgb(30, 29, 29)) ;
+     border-radius: 20px;
+     border: 5px solid #0b6fbb ;
+}
+.contactForm h2{
+ font-size: 30px;
+ color: #333;
+ font-weight: 500;
+
+}
+.contactForm .inputBox_contact{
+    position:relative;
+    width: 100%;
+    margin-top:10px;
+
+}
+.contactForm .inputBox_contact input,
+.contactForm .inputBox_contact textarea
+{
+    width:100%;
+    padding: 10px 5px;
+    font-size:16px;
+    margin:10px 0;
+    border:none;
+    border-color: 2px solid #333;
+    outline: none;
+    resize:none;
+    border-radius: 20px;
+}
+.contactForm .inputBox_contact span{
+    position: absolute;
+    left:0;
+    padding: 5px 0;
+    font-size:16px;
+    margin:10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color:#666;
+}
+.contactForm .inputBox_contact input:focus ~ span,
+.contactForm .inputBox_contact input:valid ~ span,
+.contactForm .inputBox_contact textarea:focus ~ span,
+.contactForm .inputBox_contact textarea:valid ~ span
+{
+    color:#0b6fbb;
+    font-size:12px;
+    transform: translateY(-20px);
+
+}
+.contactForm .inputBox_contact input[type="submit "]{
+  width:100px; 
+  background: #0b6fbb;
+  color:#fff; 
+  border:none;
+  cursor:pointer; 
+  padding:10px 20px;
+  font-size:18px;
+  border-radius: 20px;
+  
+}
+@media(max-width:991px){
+    .contact{
+        padding:50px;
+    }
+    .container_contact{
+     flex-direction: column ;   
+    }
+    .container_contact .contactInfo{
+      margin-bottom: 40px;
+    }
+    .container_contact .contactInfo,
+    .contactForm
+    {
+        width:100%;
+
+    }
+
+}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { IoSearchCircleSharp } from "react-icons/io5";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 
-const DashboardOverview = () => {
+const DashboardBuyTicket = () => {
     const [selectedFilter, setSelectedFilter] = useState("all");
     const [pinnedBuses, setPinnedBuses] = useState([]);
     const [fromInputValue, setFromInputValue] = useState(""); // Store input value for "From"
@@ -13,20 +13,21 @@ const DashboardOverview = () => {
     const [filteredToSuggestions, setFilteredToSuggestions] = useState([]); // Filtered "To" suggestions
 
     const booking_bus = [
-        { id: "RAC843Kg", direction: "kimironko - zindiro", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "kimironko - Downtown", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "Nyanza - Downtown", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "Remera - Gikondo", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "Nyamirambo - nyabugogo", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "kimironko - zindiro", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "kimironko - Downtown", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "kinyinya - nyabugogo", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "nyabugogo- kinyinya", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "Nyamirambo - nyabugogo", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "Nyamirambo - nyabugogo", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" }       
+
+        { id: "RAC843Kg", direction: "kigali - Nyamagabe", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "12:00 am", cost: "6000 rwf", Description: "Travel Cost" },
+        { id: "RAC843Kg", direction: "kigali - Rwamagana", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "10:00 am", cost: "1500 rwf", Description: "Travel Cost" },
+        { id: "RAC843Kg", direction: "Kigali - Muhanga", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "9:30 am", cost: "1500 rwf", Description: "Travel Cost" },
+        { id: "RAC843Kg", direction: "kigali - Ruhango", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "10:00 am", cost: "2000 rwf", Description: "Travel Cost" },
+        { id: "RAC843Kg", direction: "Kigali - Huye", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "11:00 am", cost: "3000 rwf", Description: "Travel Cost" },
+        { id: "RAC843Kg", direction: "kigali - Muhanga", type: "Royal", title: "Departure Time", time: "9:00 am", arrival: "Arrival Time", time2: "10:00 am", cost: "1500 rwf", Description: "Travel Cost" },
+        { id: "RAC843Kg", direction: "kigali - Rubavu", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "12:00 am", cost: "5000 rwf", Description: "Travel Cost" },
+        { id: "RAC843Kg", direction: "kigali - Nyanze", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
+        { id: "RAC843Kg", direction: "kigali- Kayonza", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
+        { id: "RAC843Kg", direction: "kigali - Rubavu", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
+        { id: "RAC843Kg", direction: "kigali - Gicumbi", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" }       
     ];
     
-    const popular_places = ["Nyabugogo", "Kimironko", "Kimisagara", "Nyamirambo", "Remera", "Gikondo", "Nyanza", "Kabuga", "Busanza", "Kinyinya"];
+    const popular_places = ["NYAMAGABE", "HUYE", "NYANZA", "RUBAVU", "RUHANGO", "RWAMAGANA", "MUHANGA", "KAYONZA", "GICUMBI"];
 
     // Handle the "From" input change
     const handleFromChange = (e) => {
@@ -87,7 +88,7 @@ const DashboardOverview = () => {
                 <div className='upper_usr'>
                     <div className="upper_overview_usr">
                         <br /><br /><br />
-                        <h2>Find Your Bus</h2>
+                        <h2>Get Yourself a seat</h2>
                         <p>If you do not find the bus on the list, it is because we are still working on it</p>
                     </div>
                     <div className="the_select_boxes_usr">
@@ -199,7 +200,7 @@ const DashboardOverview = () => {
                                     <div className="price_usr">
                                         <p className="mycost_usr">{bus.cost}</p>
                                         <p className="mydescript_usr">{bus.Description}</p>
-                                        <button className="btn1_usr"><Link to="/BusTracker" className="linkbtn_usr">Track Bus</Link></button><br />
+                                        <button className="btn1_usr"><Link to="/Seats" className="linkbtn_usr">Book bus</Link></button><br />
                                         <button className="btn2_usr">More info</button>
                                         <p className="report_usr">Report a problem</p>
                                     </div>
@@ -215,4 +216,4 @@ const DashboardOverview = () => {
     );
 };
 
-export default DashboardOverview;
+export default DashboardBuyTicket;

@@ -1,106 +1,105 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  FaBars,
-  FaSearch,
-  FaBell,
-  FaEnvelope,
-  FaUser,
-  FaMoon,
-  FaSun,
-} from "react-icons/fa";
-import "./AdminStyles/adminnavbar.css";
+import React, { useState, useEffect } from 'react';
+import { FaBars, FaSearch, FaUser, FaEnvelope, FaBell, FaSignOutAlt, FaCog, FaInbox } from 'react-icons/fa';
+import { FiSun, FiMoon } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import '../DashboardAdmin/AdminStyles/adminnavbar.css'
+import Americanflag from "../assets/flag.png";
+import user from "../assets/shortimag2.jpg";
 
-const AdminNavbar = ({
-  toggleSidebar,
-  darkMode,
-  toggleDarkMode,
-  language,
-  setLanguage,
-}) => {
-  const [notifications, setNotifications] = useState(3);
-  const [messages, setMessages] = useState(5);
-  const [searchTerm, setSearchTerm] = useState("");
+const AdminNavbar = () => {
+  const [isDark, setIsDark] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
-  const translations = {
-    en: {
-      search: "Search...",
-      notifications: "Notifications",
-      messages: "Messages",
-      profile: "Profile",
-      darkMode: "Dark Mode",
-      lightMode: "Light Mode",
-    },
-    fr: {
-      search: "Rechercher...",
-      notifications: "Notifications",
-      messages: "Messages",
-      profile: "Profil",
-      darkMode: "Mode Sombre",
-      lightMode: "Mode Clair",
-    },
-    rw: {
-      search: "Gushakisha...",
-      notifications: "Imenyesha",
-      messages: "Ubutumwa",
-      profile: "Umwirondoro",
-      darkMode: "Umukara",
-      lightMode: "Urumuri",
-    },
+  const [showCountries, setShowCountries] = useState(false);
+  const [showMessages, setShowMessages] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
+
+  const countries = [
+    { code: 'US', name: 'English' },
+    { code: 'FR', name: 'French' },
+    { code: 'ES', name: 'Spanish' },
+    { code: 'DE', name: 'German' }
+  ];
+
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => {
+    setIsDark(prev => !prev);
   };
 
-  const t = translations[language || "en"];
-
   return (
-    <div className={`navbaradmin ${darkMode ? "dark" : ""}`}>
-      <div className="navbar-left-admin">
-        <button className="menu-btn-admin" onClick={toggleSidebar}>
+    <nav className="dashnavbar_admin">
+      <div className="dashnavbar-left_admin">
+        <button className="menu-button_admin">
           <FaBars />
         </button>
 
-        <div className="search-container-admin">
-          <input
-            type="text"
-            className="search-input-admin"
-            placeholder={t.search}
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <FaSearch className="search-icon-admin" />
+        <div className="search-container_admin">
+          <input type="text" placeholder="Search" className="search-input_admin" />
+          <FaSearch className="search-icon_admin" />
         </div>
       </div>
 
-      <div className="navbar-right-admin">
-        <select
-          className="language-select-admin"
-          value={language}
-          onChange={(e) => setLanguage(e.target.value)}
-        >
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-          <option value="rw">Kinyarwanda</option>
-        </select>
-
-        <button className="icon-btn-admin" title={t.notifications}>
-          <FaBell />
-          {notifications > 0 && <span className="badge-admin">{notifications}</span>}
+      <div className="dashnavbar-right">
+        <button onClick={toggleTheme} className="nav-button theme-toggle">
+          {isDark ? <FiSun /> : <FiMoon />}
         </button>
 
-        <button className="icon-btn-admin" title={t.messages}> 
-          <Link to ="Adminemail" >  <FaEnvelope /></Link>
-         
-          {messages > 0 && <span className="badge-admin">{messages}</span>}
-        </button>
+        <div className="dropdown-container">
+          <button onClick={() => setShowCountries(!showCountries)} className="nav-button">
+            <img src={Americanflag} alt="Language" className="country-flag" />
+          </button>
+          {showCountries && (
+            <div className="dropdown-menu">
+              {countries.map((country) => (
+                <button key={country.code} className="dropdown-item">
+                  {country.name}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
 
-        <button className="icon-btn-admin theme-toggle-admin" onClick={toggleDarkMode}>
-          {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
+        <div className="dropdown-container">
+          <button onClick={() => setShowMessages(!showMessages)} className="nav-button">
+            <FaEnvelope />
+          </button>
+          {showMessages && <div className="dropdown-menu"><div className="dropdown-item">No new messages</div></div>}
+        </div>
 
-        <button className="icon-btn-admin profile-btn-admin" title={t.profile}>
-          <FaUser />
-        </button>
+        <div className="dropdown-container">
+          <button onClick={() => setShowNotifications(!showNotifications)} className="nav-button">
+            <FaBell />
+          </button>
+          {showNotifications && <div className="dropdown-menu"><div className="dropdown-item">No new notifications</div></div>}
+        </div>
+
+        <div className="dropdown-container">
+          <button onClick={() => setShowProfile(!showProfile)} className="nav-button">
+            <img src={user} alt="user" />
+          </button>
+
+          {showProfile && (
+            <div className="dropdown-menu">
+              <Link to="/profile" className="dropdown-item"><FaUser /> Profile</Link>
+              <Link to="/inbox" className="dropdown-item"><FaInbox /> Inbox</Link>
+              <Link to="/settings" className="dropdown-item"><FaCog /> Settings</Link>
+              <button className="dropdown-item logout"><FaSignOutAlt /> Logout</button>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

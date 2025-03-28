@@ -124,7 +124,7 @@ body {
     -webkit-appearance: none;
     appearance: none;
     height: 6px;
-    background: red;
+    background:#007bff ;
     border-radius: 5px;
     outline: none;
     cursor: pointer;
@@ -135,7 +135,7 @@ body {
     appearance: none;
     width: 14px;
     height: 14px;
-    background: red;
+    background: #007bff;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid white;

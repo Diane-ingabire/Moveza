@@ -15,8 +15,8 @@ const Navbar = () => {
     { label: "Home", link: "/" },
     { label: "Services", link: "/services" },
     { label: "Tickets", link: "/tickets" },
-    { label: "About", link: "/Seats" },
     { label: "About", link: "/about" },
+    { label: "Contact", link: "/Contact" },
     
   ];
 

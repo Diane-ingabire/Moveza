@@ -122,11 +122,11 @@
   }
   
   .card-change.up {
-    color: #48bb78;
+    color: #a6aff1;
   }
   
   .card-change.down {
-    color: #f56565;
+    color: #e5e3e302;
   }
   
   .trend-arrow {
@@ -222,12 +222,12 @@
   
   .status-badge.delayed {
     background-color: #fff5f5;
-    color: #e53e3e;
+    color: #718096
   }
   
   .status-badge.on-time {
     background-color: #f0fff4;
-    color: #38a169;
+    color: #0b7cf5;
   }
   
   .status-badge.confirmed {

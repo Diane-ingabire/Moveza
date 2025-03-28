@@ -13,6 +13,8 @@
     "@react-spring/web": "^9.7.5",
     "axios": "^1.8.3",
     "framer-motion": "^12.5.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.483.0",
     "notiflix": "^3.2.8",

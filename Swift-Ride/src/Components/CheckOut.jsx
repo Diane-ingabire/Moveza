@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../Styles/checkout.css'
+import { useNavigate } from 'react-router-dom';
 
 const CheckOut = () => {
+  
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     fullName: '',
@@ -10,8 +12,17 @@ const CheckOut = () => {
     bookingNumber: '4645645',
     pickupStation: 'Swayambhu'
   });
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
+
+  const handlePaymentMethodSelect = (method) => {
+    setSelectedPaymentMethod(method);
+  };
+    const navigate = useNavigate();
   
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('mastercard');
+    const handleTicket = () => {
+      navigate("/invoice");
+    };
+ 
   
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,10 +33,6 @@ const CheckOut = () => {
   };
   
  
-  
-  const handlePaymentMethodSelect = (method) => {
-    setSelectedPaymentMethod(method);
-  };
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -118,47 +125,49 @@ const CheckOut = () => {
                   onChange={handleInputChange}
                 >
                   <option value="Swayambhu">Nyabugogo</option>
-                  <option value="Kalanki">Huye</option>
-                  <option value="Balkhu"></option>
+                  <option value="Kalanki">Ruyenzi</option>
+                  <option value="Balkhu">Bishenyi</option>
                 </select>
               </div>
               
               <div className="input-group">
-                <label>Select Payment Method</label>
-                <div className="payment-methods">
-                  <div 
-                    className={`payment-method ${selectedPaymentMethod === 'mastercard' ? 'selected' : ''}`}
-                    onClick={() => handlePaymentMethodSelect('mastercard')}
-                  >
-                    <div className="payment-method-info">
-                      <div className="card"></div>
-                      <div className="payment-info">
-                        <div>Ram Bdr. Ghale</div>
-                        <div>•••• 6888</div>
-                      </div>
-                    </div>
-                    <div className="checkbox">
-                      {selectedPaymentMethod === 'mastercard' && <div className="checked"></div>}
-                    </div>
-                  </div>
-                </div>
-                <div 
-                  className={`payment-method ${selectedPaymentMethod === 'visa' ? 'selected' : ''}`}
-                  onClick={() => handlePaymentMethodSelect('visa')}
-                >
-                  <div className="payment-method-info">
-                    <div className="card"></div>
-                    <div className="payment-info">
-                      <div>Ram Bdr. Ghale</div>
-                      <div>•••• 8989</div>
-                    </div>
-                  </div>
-                  <div className="checkbox">
-                    {selectedPaymentMethod === 'visa' && <div className="checked"></div>}
-                  </div>
-                </div>
-              </div>
-              <button className="btn-submit">
+      <label>Select Payment Method</label>
+      <div className="payment-methods">
+        <div 
+          className={`payment-method ${selectedPaymentMethod === 'mastercard' ? 'selected' : ''}`}
+          onClick={() => handlePaymentMethodSelect('mastercard')}
+        >
+          <div className="payment-method-info">
+            <div className="card mastercard-icon"></div>
+            <div className="payment-info">
+              <div className="payment-type">Mobile Money</div>
+              <div className="card-number">•••• 9999</div>
+            </div>
+            
+          </div>
+          <div className="checkbox">
+            {selectedPaymentMethod === 'mastercard' && <div className="checked"></div>}
+          </div>
+        </div>
+        
+        
+        <div 
+          className={`payment-method ${selectedPaymentMethod === 'add-new' ? 'selected' : ''}`}
+          onClick={() => handlePaymentMethodSelect('add-new')}
+        >
+          <div className="payment-method-info">
+            <div className="card add-new-icon"></div>
+            <div className="payment-info">
+              <div className="payment-type">Add New Card</div>
+            </div>
+          </div>
+          <div className="checkbox">
+            {selectedPaymentMethod === 'add-new' && <div className="checked"></div>}
+          </div>
+        </div>
+      </div>
+    </div>
+              <button className="btn-submit"  onClick={handleTicket}>
                 PROCEED TO PAY →
               </button>
             </div>

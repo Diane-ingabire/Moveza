@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import QRCode from "react-qr-code";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 import "../Styles/invoice.css";
-import buse from "../assets/buse.png"; 
+import logo from "../assets/logo (2).png";
 
 const Ticket = () => {
+  const ticketRef = useRef();
+
   const ticketDetails = {
     billNo: "465",
     pricePerSeat: "NPR 1600/seat",
@@ -17,14 +21,24 @@ const Ticket = () => {
     departureTime: "06:15 PM"
   };
 
+  const downloadTicket = () => {
+    const ticketElement = ticketRef.current;
+    html2canvas(ticketElement, { scale: 2 }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      pdf.addImage(imgData, "PNG", 10, 10, 190, 0);
+      pdf.save("bus_ticket.pdf");
+    });
+  };
+
   return (
     <div className="ticket-container">
       <h2 className="invoice-title">Collect Your Invoice</h2>
-      <div className="ticket-wrapper">
+      <div className="ticket-wrapper" ref={ticketRef}>
         {/* Main Ticket */}
         <div className="ticket-card">
           <div className="ticket-header">
-            <img src={buse} alt="Bus Logo" className="bus-logo" />
+            <img src={logo} alt="Bus Logo" className="bus-logo" />
             <div>
               <h3 className="bus-name">SWORGADWARI DELUXE</h3>
               <p className="bus-info">(Bus No. Ba. 2 Kha 9704)</p>
@@ -47,7 +61,6 @@ const Ticket = () => {
             <p className="footer-text">From: {ticketDetails.from}</p>
             <p><strong>Arrival:</strong> 05:45 PM</p>
             <p><strong>Departure:</strong> {ticketDetails.departureTime}</p>
-            <button className="download-btn">Download Invoice</button>
           </div>
         </div>
         <div className="side-info">
@@ -62,6 +75,8 @@ const Ticket = () => {
           <p><strong>Total Price:</strong> {ticketDetails.totalPrice}</p>
         </div>
       </div>
+      {/* Download Button for Screen Only */}
+      <button className="download-btn" onClick={downloadTicket}>Download Invoice</button>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 .overview_container_usr{
     background-color: rgb(227, 236, 191);
+   
 }
 .dash_over_container_usr{
     margin-left: 30px;
@@ -91,7 +92,7 @@
 .bus_usr{
     background-color:white;
     width: 600px;
-    height: 250px;
+    height: 350px;
     border-radius: 20px;
     padding: 10px 20px;
     display: flex;
@@ -202,15 +203,16 @@
     width: 180px;
     padding: 0px 20px;
     background-color: white;
-    color: #374151; /* Dark Gray */
+    color: #374151;
 }
 
 .mylocation_usr {
+    position:relative;
     display: flex;
     gap: 10px;
-    background-color: #200b5a; /* Dark Purple */
-    width: 150px;
-    padding: 6px 8px;
+    background-color: #0b6fbb; 
+    width: 200px;
+    padding: 8px 8px;
     margin-left: 50px;
     margin-bottom: 40px;
     border-radius: 20px;
@@ -331,15 +333,7 @@
     text-decoration: none;
 
 }
-.btn1_usr .linkbtn_usr:hover{
-    color:#0b6fbb;
-}
 
-.btn1_usr:hover {
-    background-color: transparent;
-    color: #0b6fbb;
-    border: 1px solid #0b6fbb;
-}
 
 .btn2_usr{
     background-color: #e5e7eb; 
@@ -354,7 +348,7 @@
 .search_icon_usr {
     padding: 20px 30px 30px 0px;
     font-size: 40px;
-    color: #200b5a; /* Dark Purple */
+    color: #200b5a; 
 }
 
 .arrow_icon_usr {
