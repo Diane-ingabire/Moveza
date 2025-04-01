@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./dashboardstyles/DashboardNavbar.css";
-import { CiLocationOn } from "react-icons/ci";
+import { FaLocationDot } from "react-icons/fa6";
 import { IoNotifications } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
@@ -29,7 +29,7 @@ const DashboardNavbar = () => {
       <div className="dashboardnav">
         <div className="left_dashboard_nav">
           <div className="log_dash_nav">
-            <p><span className="loc-icon"><CiLocationOn /></span>Swift Ride</p>
+            <p><span className="loc-icon"><FaLocationDot/></span>Swift Ride</p>
           </div>
           <div className="Find_my_bus" onClick={goFindbusPage}> {/* Fixed onClick */}
             <p>Find my bus</p>

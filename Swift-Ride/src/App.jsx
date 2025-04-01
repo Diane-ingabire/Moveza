@@ -26,6 +26,7 @@ import DashboardBuyticket from "./Dashboard/DashboardBuyticket";
 import BookingForm from "./Components/BookingForm";
 import Contact from "./Components/Contact";
 import BusTrack from "./Dashboard/BusTrack";
+import BookOverlay from "./Dashboard/BookOverlay";
 
 const App = () => {
   return (
@@ -73,6 +74,7 @@ const App = () => {
             <Route path="DashboardBuyticket" element={<DashboardBuyticket />} />
             <Route path="Menu" element={<Menu/>}/>
             <Route path="BusTrack" element={<BusTrack/>}/>
+            <Route path="BookOverlay" element={<BookOverlay/>}/>
             
             {/* Add more user routes as needed */}
           </Route>
