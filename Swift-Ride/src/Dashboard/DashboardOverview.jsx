@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; 
 import "./dashboardstyles/DashboardOverview.css";
 import { Link } from "react-router-dom";
 import { IoSearchCircleSharp } from "react-icons/io5";
@@ -7,33 +7,49 @@ import { FaArrowRightArrowLeft } from "react-icons/fa6";
 const DashboardOverview = () => {
     const [selectedFilter, setSelectedFilter] = useState("all");
     const [pinnedBuses, setPinnedBuses] = useState([]);
-    const [fromInputValue, setFromInputValue] = useState(""); // Store input value for "From"
-    const [toInputValue, setToInputValue] = useState(""); // Store input value for "To"
-    const [filteredFromSuggestions, setFilteredFromSuggestions] = useState([]); // Filtered "From" suggestions
-    const [filteredToSuggestions, setFilteredToSuggestions] = useState([]); // Filtered "To" suggestions
+    const [fromInputValue, setFromInputValue] = useState(""); 
+    const [toInputValue, setToInputValue] = useState(""); 
+    const [filteredFromSuggestions, setFilteredFromSuggestions] = useState([]); 
+    const [filteredToSuggestions, setFilteredToSuggestions] = useState([]); 
+    const [bookingBusData, setBookingBusData] = useState([]); // State for fetched bus data
 
-    const booking_bus = [
-        { id: "RAC843Kg", direction: "kimironko - zindiro", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "kimironko - Downtown", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "Nyanza - Downtown", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "Remera - Gikondo", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "Nyamirambo - nyabugogo", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "kimironko - zindiro", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "kimironko - Downtown", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "kinyinya - nyabugogo", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "nyabugogo- kinyinya", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "Nyamirambo - nyabugogo", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" },
-        { id: "RAC843Kg", direction: "Nyamirambo - nyabugogo", type: "Royal", title: "Departure Time", time: "8:00 am", arrival: "Arrival Time", time2: "8:30 am", cost: "217 rwf", Description: "Travel Cost" }       
-    ];
-    
     const popular_places = ["Nyabugogo", "Kimironko", "Kimisagara", "Nyamirambo", "Remera", "Gikondo", "Nyanza", "Kabuga", "Busanza", "Kinyinya"];
+
+    // Fetch bus data when the component mounts
+    useEffect(() => {
+        const fetchBusData = async () => {
+            try {
+                const response = await fetch("http://localhost:3000/bus/all"); // Replace with your real API
+                const data = await response.json();
+    
+                // Map the data to match the frontend's expected structure
+                const mappedData = data.map(bus => ({
+                    id: bus.busNumber, // Assuming busNumber is used as the ID
+                    direction: bus.busRoute, // Use busRoute for the direction
+                    type: "Royal", // Hardcoded as per the frontend data structure, or you can use another field if needed
+                    title: "Departure Time", // Hardcoded, but you can customize it if needed
+                    time: "8:00 am", // Hardcoded, you can use the real time if provided in the backend
+                    arrival: "Arrival Time", // Hardcoded, or use real data if available
+                    time2: "8:30 am", // Hardcoded, adjust accordingly
+                    cost: "217 rwf", // Hardcoded, you can map this from another source if necessary
+                    Description: "Travel Cost" // Hardcoded, adjust accordingly
+                }));
+    
+                setBookingBusData(mappedData); // Set the mapped data to state
+            } catch (error) {
+                console.error("Error fetching bus data:", error);
+            }
+        };
+    
+        fetchBusData();
+    }, []);
+    
 
     // Handle the "From" input change
     const handleFromChange = (e) => {
         const value = e.target.value;
         setFromInputValue(value);
 
-        // Filter suggestions based on input
         setFilteredFromSuggestions(
             popular_places.filter((place) =>
                 place.toLowerCase().includes(value.toLowerCase())
@@ -46,7 +62,6 @@ const DashboardOverview = () => {
         const value = e.target.value;
         setToInputValue(value);
 
-        // Filter suggestions based on input
         setFilteredToSuggestions(
             popular_places.filter((place) =>
                 place.toLowerCase().includes(value.toLowerCase())
@@ -72,11 +87,11 @@ const DashboardOverview = () => {
     };
 
     // Filter buses based on selected filter
-    let filteredBuses = booking_bus;
+    let filteredBuses = bookingBusData;
     if (selectedFilter === "pinned") {
         filteredBuses = pinnedBuses;
     } else if (popular_places.includes(selectedFilter)) {
-        filteredBuses = booking_bus.filter(bus =>
+        filteredBuses = bookingBusData.filter(bus =>
             bus.direction.toLowerCase().includes(selectedFilter.toLowerCase())
         );
     }
