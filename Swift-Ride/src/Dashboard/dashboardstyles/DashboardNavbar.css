@@ -19,10 +19,12 @@
     gap: 10px;
 }
 
-.log_dash_nav {
+.log_dash_nav  {
     color: #0b6fbb;
     font-size: x-large;
     font-weight: bold;
+    
+
 }
 
 .right_dashboard_nav {

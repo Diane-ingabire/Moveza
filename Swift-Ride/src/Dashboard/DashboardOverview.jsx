@@ -171,7 +171,7 @@ const DashboardOverview = () => {
 
                 {/* Most Popular Places */}
                 <div className="tags_usr">
-                    <p>Most popular</p>
+                    <p>Recent used</p>
                     <div className="most_popular_usr">
                         {popular_places.map((place, index) => (
                             <div
@@ -206,7 +206,7 @@ const DashboardOverview = () => {
                                             <p>{bus.time2}</p>
                                         </div>
                                     </div>
-                                    <div className="pinme_usr" onClick={() => togglePin(bus)} style={{ cursor: "pointer", color: pinnedBuses.includes(bus) ? "red" : "black" }}>
+                                    <div className="pinme_usr" onClick={() => togglePin(bus)} style={{ cursor: "pointer", color: pinnedBuses.includes(bus) ? "#0b6fbb" : "black" }}>
                                         {pinnedBuses.includes(bus) ? "Unpin" : "Pin"}
                                     </div>
                                 </div>
@@ -214,8 +214,8 @@ const DashboardOverview = () => {
                                     <div className="price_usr">
                                         <p className="mycost_usr">{bus.cost}</p>
                                         <p className="mydescript_usr">{bus.Description}</p>
-                                        <button className="btn1_usr"><Link to="/BusTracker" className="linkbtn_usr">Track Bus</Link></button><br />
-                                        <button className="btn2_usr">More info</button>
+                                        <button className="btn1_usr"><Link to="BookOverlay" className="linkbtn_usr">Track Bus</Link></button><br />
+                                        <button className="btn2_usr"><Link to="BusTrack">Track </Link></button>
                                         <p className="report_usr">Report a problem</p>
                                     </div>
                                 </div>

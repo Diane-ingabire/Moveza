@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../Dashboard/dashboardstyles/busTrack.css";
 import { FaBus, FaMapMarkerAlt, FaClock, FaExclamationTriangle } from "react-icons/fa";
 
-const BusTrack = () => {
+const BusTracker = () => {
   // Sample data - In a real app, this would come from your backend/API
   const [busData, setBusData] = useState({
     routeId: "RW123",
@@ -171,4 +171,4 @@ const BusTrack = () => {
   );
 };
 
-export default BusTrack;
+export default BusTracker;

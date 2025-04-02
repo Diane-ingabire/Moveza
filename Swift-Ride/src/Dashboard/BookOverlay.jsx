@@ -3,6 +3,44 @@ import { X, Calendar, Map, Clock, CreditCard, Users } from 'lucide-react';
 import '../Dashboard/dashboardstyles/bookOverlay.css';
 
 const BookingOverlay = ({ bus, onClose, onSubmit }) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const totalAmount = bus.price * formData.numberOfSeats;
+    
+    const bookingData = {
+        user: "USER_ID_HERE", // Replace with actual logged-in user ID
+        bus: bus._id,
+        departurePlace: formData.departurePlace,
+        destination: formData.destination,
+        pickingStation: formData.pickingStation,
+        numberOfSeats: formData.numberOfSeats,
+        totalAmountPaid: totalAmount,
+        paymentStatus: formData.paymentMethod === "card" ? "paid" : "unpaid"
+    };
+
+    try {
+        const response = await fetch("http://localhost:3000/booking/create", { // Update with your backend URL
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(bookingData)
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Booking Successful!");
+            onClose(); // Close the form after booking
+        } else {
+            alert(`Booking Failed: ${data.error}`);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred while booking.");
+    }
+};
+
+
   // State for form fields
   const [formData, setFormData] = useState({
     departurePlace: bus?.departurePlace || '',
@@ -25,24 +63,24 @@ const BookingOverlay = ({ bus, onClose, onSubmit }) => {
   };
   
   // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Calculate total amount based on bus price and number of seats
-    const totalAmount = bus.price * formData.numberOfSeats;
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Calculate total amount based on bus price and number of seats
+  //   const totalAmount = bus.price * formData.numberOfSeats;
     
-    // Prepare booking data from form and bus
-    const bookingData = {
-      bus: bus._id,
-      departurePlace: formData.departurePlace,
-      destination: formData.destination,
-      pickingStation: formData.pickingStation,
-      numberOfSeats: formData.numberOfSeats,
-      totalAmountPaid: totalAmount,
-      // Other fields will be set by backend
-    };
+  //   // Prepare booking data from form and bus
+  //   const bookingData = {
+  //     bus: bus._id,
+  //     departurePlace: formData.departurePlace,
+  //     destination: formData.destination,
+  //     pickingStation: formData.pickingStation,
+  //     numberOfSeats: formData.numberOfSeats,
+  //     totalAmountPaid: totalAmount,
+  //     // Other fields will be set by backend
+  //   };
     
-    onSubmit(bookingData);
-  };
+  //   onSubmit(bookingData);
+  // };
   
   // Next step in form
   const nextStep = () => setStep(step + 1);
@@ -138,7 +176,7 @@ const BookingOverlay = ({ bus, onClose, onSubmit }) => {
                         {station}
                       </option>
                     )) || [
-                      <option key="central" value="Central Station">Central Station</option>,
+                      <option key="central" value="Central Station">Remera</option>,
                       <option key="north" value="North Terminal">North Terminal</option>,
                       <option key="east" value="East Gateway">East Gateway</option>
                     ]}
@@ -344,12 +382,12 @@ const BookingOverlay = ({ bus, onClose, onSubmit }) => {
                 Continue
               </button>
             ) : (
-              <button
+              <button 
                 type="submit"
                 onClick={handleSubmit}
                 className="confirm-button"
-              >
-                Confirm Booking
+              > Confirm Booking
+               
               </button>
             )}
           </div>

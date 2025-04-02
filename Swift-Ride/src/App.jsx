@@ -39,13 +39,14 @@ const App = () => {
           <Route path="Seats" element={<Seats />}/>
           <Route path="bookingPage" element={<BookingForm />}/>
           <Route path="about" element={<Aboutpage />}/>
-          <Route path="Invoice" element={<Invoice />}/>
+          
           <Route path="tickets" element={<Ticket />} />
           <Route path="Checkout" element={<CheckOut />}/>
           <Route path="Contact" element={<Contact />}/>
      
 
         </Route>
+        <Route path="Invoice" element={<Invoice />}/>
         
         {/* Public login page */}
         <Route path="LoginPage" element={<LoginPage />} />
