@@ -19,7 +19,7 @@ const DashboardOverview = () => {
     useEffect(() => {
         const fetchBusData = async () => {
             try {
-                const response = await fetch("http://localhost:3000/bus/all"); // Replace with your real API
+                const response = await fetch("https://swift-ride-backend-4.onrender.com/bus/all"); // Replace with your real API
                 const data = await response.json();
     
                 // Map the data to match the frontend's expected structure
