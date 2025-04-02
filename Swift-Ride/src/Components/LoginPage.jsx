@@ -8,7 +8,7 @@ import { Notify } from "notiflix";
 import mylogimg from "../assets/pixel1.jpg"
 import logo from "../assets/logo (2).png"
 
-const API_URL = 'https://swift-ride-backend-4.onrender.com';
+const API_URL = 'https://swift-ride-backend-4.onrender.com/';
 
 function LoginPage() {
   const navigate = useNavigate();
