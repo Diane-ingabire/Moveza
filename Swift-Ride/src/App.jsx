@@ -19,7 +19,7 @@ import ManagePassengers from "./DashboardAdmin/ManagePassengers";
 import AdminBooking from "./DashboardAdmin/AdminBooking";
 import Reports from "./DashboardAdmin/Reports";
 import AdminSettings from "./DashboardAdmin/AdminSettings";
-import AdminEmails from "./DashboardAdmin/Adminemails";
+// import AdminEmails from "./DashboardAdmin/Adminemails";
 import Aboutpage from "./Components/Aboutpage";
 import Menu from "./Dashboard/Menu";
 import DashboardBuyticket from "./Dashboard/DashboardBuyticket";
