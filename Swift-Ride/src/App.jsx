@@ -62,12 +62,12 @@ const App = () => {
             <Route path="bookings" element={<AdminBooking/>} />
             <Route path="reports" element={<Reports/>} />
             <Route path="settings" element={<AdminSettings />}/>
-
+            </Route>
             {/* Add more admin routes as needed */}
-          </Route>
-          <Route path="Adminemails" element={<AdminEmails />} />
-        </Route>
-        
+         
+           {/* <Route path="Adminemails" element={<AdminEmails />} /> */}
+        </Route> 
+         
         {/* User routes - only accessible to regular users */}
         <Route element={<UserRoute />}>
           <Route path="dashboard" element={<DashboardLayout />}>
